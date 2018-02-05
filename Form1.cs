@@ -119,5 +119,11 @@ namespace WindowsFormsApp1
                 web.Stop();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.Controls.Clear();
+
+        }
     }
 }

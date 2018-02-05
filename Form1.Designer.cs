@@ -41,6 +41,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnNewtab = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -53,7 +54,7 @@
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(649, 289);
+            this.webBrowser1.Size = new System.Drawing.Size(736, 309);
             this.webBrowser1.TabIndex = 0;
             // 
             // toolStrip1
@@ -68,7 +69,7 @@
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(663, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(750, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -149,7 +150,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(663, 321);
+            this.tabControl1.Size = new System.Drawing.Size(750, 341);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -158,28 +159,39 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(655, 295);
+            this.tabPage1.Size = new System.Drawing.Size(742, 315);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnNewtab
             // 
-            this.btnNewtab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewtab.Location = new System.Drawing.Point(584, 2);
+            this.btnNewtab.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNewtab.Location = new System.Drawing.Point(548, 2);
             this.btnNewtab.Name = "btnNewtab";
-            this.btnNewtab.Size = new System.Drawing.Size(75, 23);
+            this.btnNewtab.Size = new System.Drawing.Size(101, 23);
             this.btnNewtab.TabIndex = 4;
             this.btnNewtab.Text = "New Tab";
             this.btnNewtab.UseVisualStyleBackColor = true;
             this.btnNewtab.Click += new System.EventHandler(this.btnNewtab_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Location = new System.Drawing.Point(655, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Close all tab";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 346);
+            this.ClientSize = new System.Drawing.Size(750, 366);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNewtab);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
@@ -209,6 +221,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.Button btnNewtab;
+        private System.Windows.Forms.Button button1;
     }
 }
 
