@@ -8,3 +8,8 @@ C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Windows
 C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Geckofx-Core.dll
+C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Geckofx-Winforms.dll
+C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Geckofx-Core.pdb
+C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Geckofx-Core.dll.config
+C:\Users\nguyen\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Geckofx-Winforms.pdb

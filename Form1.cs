@@ -15,66 +15,71 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            Gecko.Xpcom.Initialize(Application.StartupPath+ "\\xulrunner");
+            geckoWebBrowser1.Navigate("https://www.google.com");
         }
-        
+
+        //hien thi tittle cua web
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(txtUrl.Text);
-
-          
-            webBrowser1.DocumentCompleted += WebBrowser1_DocumentCompleted;
+            geckoWebBrowser1.Navigate("https://www.google.com");
+            geckoWebBrowser1.DocumentCompleted += GeckoWebBrowser1_DocumentCompleted;
         }
 
-        private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void GeckoWebBrowser1_DocumentCompleted(object sender, Gecko.Events.GeckoDocumentCompletedEventArgs e)
         {
-            tabControl1.SelectedTab.Text = webBrowser1.DocumentTitle;
+            tabControl1.SelectedTab.Text = geckoWebBrowser1.DocumentTitle;
         }
 
-       
 
+
+        //bieu tuong kinh lup
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
-            if(web != null)
-            {
+            geckoWebBrowser1.Navigate("https://www.google.com");
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
+            
+            
                 web.Navigate(txtUrl.Text);
-            }
+            
         }
-        WebBrowser webTab = null;
+        //nut tao newtab
+        Gecko.GeckoWebBrowser webTab = null;
         private void btnNewtab_Click(object sender, EventArgs e)
         {
             TabPage tab = new TabPage();
             tab.Text = "New Tab";
             tabControl1.Controls.Add(tab);
             tabControl1.SelectTab(tabControl1.TabCount - 1);
-            webTab = new WebBrowser() { ScriptErrorsSuppressed = true };
+            webTab = new Gecko.GeckoWebBrowser();
             webTab.Parent = tab;
             webTab.Dock = DockStyle.Fill;
-           
-           
-            webTab.DocumentCompleted += WebTab_DocumentCompleted;
+            webTab.Navigate("https://www.google.com");
+            txtUrl.Text= "https://www.google.com";
+            webTab.DocumentCompleted += WebTab_DocumentCompleted1;
         }
 
-        private void WebTab_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void WebTab_DocumentCompleted1(object sender, Gecko.Events.GeckoDocumentCompletedEventArgs e)
         {
             tabControl1.SelectedTab.Text = webTab.DocumentTitle;
-
         }
 
+        
+//nut go back
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
             if (web != null)
             {
                 if (web.CanGoBack)
                     web.GoBack();
             }
         }
-
+//nut go forward
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
             if (web != null)
             {
                 if (web.CanGoForward)
@@ -82,48 +87,51 @@ namespace WindowsFormsApp1
             }
 
         }
-
+//nhap url vao textbox cua cac tab
         private void txtUrl_KeyDown(object sender, KeyEventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
-            if (web != null)
-            {
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
+            
+            
                 if(e.KeyCode==Keys.Enter)
                 { web.Navigate(txtUrl.Text); }
-            }
+            
         }
-
+//nut home
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
            if(web!=null)
             {
-                web.GoHome();
+                web.Navigate("https://www.google.com");
             }
         }
-
+//nut refresh
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
             if (web != null)
             {
                 web.Refresh();
             }
         }
-
+//nut stop
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            WebBrowser web = tabControl1.SelectedTab.Controls[0] as WebBrowser;
+            Gecko.GeckoWebBrowser web = tabControl1.SelectedTab.Controls[0] as Gecko.GeckoWebBrowser;
             if (web != null)
             {
                 web.Stop();
             }
         }
-
+//nut close-all-tab
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.Controls.Clear();
+            //
 
         }
+
+        
+
     }
 }
